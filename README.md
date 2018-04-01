@@ -18,3 +18,11 @@ It will Get News
 
 we then download image and put it into a directory provided in configuration file in conf/ directory
 and put generated XML file into XML directory provided into configuration file in conf/ directory
+
+# Solr Guide
+######## Start Solr
+	`C:\dev\newsy\solr-7.2.1\bin>solr start -e dih`
+######## Delete Solr index
+	`curl http://localhost:8983/solr/newsy/update?commit=true -H "Content-Type: text/xml" --data-binary <delete><query>*:*</query></delete>'` 
+######## Index XML news extractions  in Solr
+	`./bin/post -c newsy /C/Users/alghi/Downloads/DevEnv/newsy/NEWSY3/src/NewExtraction/XMLs/current/nazret/*.xml`
