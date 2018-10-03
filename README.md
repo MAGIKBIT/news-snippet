@@ -29,4 +29,4 @@ and put generated XML file into XML directory provided into configuration file i
 	
 # Docker Build and Run	
 	
-	docker run -d -v ~/volumes/news-snippet/news-please/config/:/news-snippet/src/newsplease/config/ <your-docker-name>/news-please
+`docker run -d --name enewsygridcrawlernextractor -v ~/volumes/news-snippet/news-please/config/:/news-snippet/src/newsplease/config/ news-snippet:latest`
