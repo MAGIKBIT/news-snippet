@@ -10,7 +10,7 @@ class NewsClassifier:
     def __init__(self):
         self.group = None
         try:
-            self.my_classifier = pickle.load(open('../my_clf_nb.pkl','rb'), encoding='latin1')
+            self.my_classifier = pickle.load(open('../../my_clf_nb.pkl','rb'), encoding='latin1')
             print("Classifier Loaded Successfully...")
         except Exception as e:
             print("Classifier Loading Error...")

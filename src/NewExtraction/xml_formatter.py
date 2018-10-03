@@ -68,7 +68,7 @@ def Generate_XML(article, title, url, group, img_path, typ="", id_="", outDir=""
             output_f.write('<field name="tag">' + tag + '</field>' + "\n")
             #print >> output_f, '<field name="tag">' + tag + '</field>'
     
-        output_f.write('<field name="group">' + group + '</field>' + "\n")
+        output_f.write('<field name="group">1</field>' + "\n")
         output_f.write('<field name="category">1</field>' + "\n")
         output_f.write('<field name="picUrl">' + img_path + '</field>' + "\n")
         output_f.write('<field name="sourceUrl">' + url + '</field>' + "\n")

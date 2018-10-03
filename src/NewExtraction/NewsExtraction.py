@@ -186,7 +186,7 @@ def Download_News_Article(article_data_extractor, article_text_extractor, articl
         if result != "Error":
             article.set_adpath(result)
             finalize_article.Generate_XML_FILE(XML_DIR, src, article)
-            print("Category " + article.get_group())
+#             print("Category " + article.get_group())
             print("Successfully Generated XML for ---> " + url)
         else:
             print("Image Download Failed...Skipping ---> " + article.get_img_url())

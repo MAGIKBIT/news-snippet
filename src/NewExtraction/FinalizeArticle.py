@@ -82,5 +82,6 @@ class FinalizeArticle:
     def Generate_XML_FILE(self, XML_DIR, SOURCE, article):
         xml_path = XML_DIR + SOURCE
         if self.generate_xml_directory(xml_path):
-            Generate_XML(article.get_title(), article.get_url(), article.get_group(), article.get_adpath(), outDir= xml_path,
+            Generate_XML(article, article.get_title(), article.get_url(), article.get_group(), article.get_adpath(), outDir= xml_path,
                                  text= article.get_content(), date=article.get_published_date(), tag= article.get_tag())
+# Generate_XML(article, title, url, group, img_path, typ="", id_="", outDir="", author="", file_name="", date="", text="", tag="", URDU_PARSER=False)

@@ -44,7 +44,7 @@ class ArticleDataExtractor:
                 print("Article desc: " + article.description)
                 print("Article filename: " + article.filename)
                 print("Article lang: " + article.language)
-                print("Article Authors: " + article.authors)
+#                 print("Article Authors: " + article.authors)
                 print("Article source_domain: " + article.source_domain)
                         
                 error = False
