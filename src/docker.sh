@@ -4,3 +4,4 @@
 #python __main__.py -c ./config
 cd /news-snippet/src/newsplease
 python3 __main__.py -c ./config
+pip install --upgrade pip
