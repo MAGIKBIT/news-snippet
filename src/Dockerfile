@@ -1,38 +1,37 @@
 FROM python:3.6.5-alpine3.7
 
-# 1. Install build dependencies
-RUN apk add --no-cache --virtual .build-deps \
+# 1. Install build tools including git
+:contentReference[oaicite:2]{index=2} \
       gcc \
       libc-dev \
       libxml2-dev \
       libxslt-dev \
-      python3-dev
+      python3-dev \
+      git
 
 # 2. Install runtime dependencies
-RUN apk add --no-cache \
+:contentReference[oaicite:3]{index=3} \
       libxml2 \
       libxslt \
       jpeg-dev \
       zlib-dev
 
-# 3. Upgrade pip and setuptools
-RUN pip3 install --no-cache-dir --upgrade pip setuptools
+# 3. Upgrade pip & setuptools
+:contentReference[oaicite:4]{index=4}
 
-# 4. Clone your project repo
-RUN git clone https://github.com/MAGIKBIT/news-snippet.git /news-snippet
+# 4. Clone project
+:contentReference[oaicite:5]{index=5}
 
 # 5. Install Python dependencies
-RUN cd /news-snippet/src && \
-    pip3 install --no-cache-dir -r requirements.txt
+:contentReference[oaicite:6]{index=6} \
+    :contentReference[oaicite:7]{index=7}
 
-# 6. Remove build dependencies to slim image
-RUN apk del .build-deps
+# 6. Clean up build dependencies
+:contentReference[oaicite:8]{index=8}
 
-# 7. Copy your startup script
-COPY docker.sh /docker.sh
+# 7. Copy startup script
+:contentReference[oaicite:9]{index=9}
+:contentReference[oaicite:10]{index=10}
 
-# 8. (Optional) Make script executable
-RUN chmod +x /docker.sh
-
-# 9. (Optional) Set default CMD or ENTRYPOINT
+# Optional: set entrypoint
 # ENTRYPOINT ["/docker.sh"]
