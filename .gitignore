@@ -99,3 +99,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Ignore extracted XML files
+src/NewExtraction/XMLs/current/
+
+# Ignore extracted images
+src/NewExtraction/images/current/
