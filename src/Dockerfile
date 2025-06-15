@@ -37,5 +37,8 @@ RUN apk del .build-deps
 COPY docker.sh /docker.sh
 RUN chmod +x /docker.sh
 
-# (Optional) Set default entrypoint
-# ENTRYPOINT ["/docker.sh"]
+# Set the working directory
+WORKDIR /news-snippet/src
+
+# Set default entrypoint
+ENTRYPOINT ["/docker.sh"]
