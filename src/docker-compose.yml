@@ -1,0 +1,45 @@
+#
+# How it works:
+# - Both containers share the `news-xml-data` volume.
+# - News-snippet writes XMLs to `/news-snippet/src/NewExtraction/XMLs/current`.
+# - Solr can access those XMLs at `/opt/solr/server/solr/newsxml`.
+# - You can index the XMLs from the shared volume into Solr using Solr’s post tool or API.
+#
+# Usage:
+#   docker-compose up --build
+#
+# Tip:
+#   Adjust the paths in your app/config if needed to match the shared volume mount points.
+#   You can now run your extraction and index the XMLs into Solr from the shared volume.
+version: '2'
+services:
+  solr:
+    container_name: "solrA"
+    image: solr
+    ports:
+      - "8983:8983"
+    volumes:
+      # Shared volume for XML files
+      - news-xml-data:/opt/solr/server/solr/newsxml
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - mycore
+
+  news-snippet:
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+    container_name: news-snippet
+    volumes:
+      # Shared volume for XML files
+      - news-xml-data:/news-snippet/src/NewExtraction/XMLs/current
+      # Mount local config directory
+      - ./src/config:/news-snippet/src/config
+      - news-image-data:/news-snippet/src/NewExtraction/images/current
+    depends_on:
+      - solr
+
+volumes:
+  news-xml-data:
+  news-image-data:
