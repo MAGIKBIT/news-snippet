@@ -10,7 +10,7 @@
 python3 -m pip install --upgrade pipconfig
 
 # Move to the NewExtration directory
-cd /workspaces/news-snippet/src/NewExtration
+cd ./NewExtration
 
 # Run the package using the __main__.py entry point
 python3 -m NewExtration
