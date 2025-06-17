@@ -69,6 +69,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
+
       # Set Dockerfile location and context
       - name: Set Dockerfile location
         run: echo "DOCKERFILE=src/Dockerfile" >> $GITHUB_ENV
