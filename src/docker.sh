@@ -6,11 +6,8 @@
 # python3 -m pip install --upgrade pipconfig
 # python3 __main__.py -c ./config
 
-# Upgrade pipconfig (if needed)
-python3 -m pip install --upgrade pipconfig
-
-# Move to the NewExtration directory
-cd ./NewsExtration
+# Move to the NewsExtraction directory
+cd ./NewsExtraction
 
 # Run the package using the __main__.py entry point
-python3 __main__.py 
+python3 __main__.py
