@@ -42,5 +42,6 @@ RUN dos2unix /docker.sh && chmod +x /docker.sh
 WORKDIR /news-snippet/src
 
 # Set default entrypoint
-ENTRYPOINT ["/docker.sh"]
-
+# ENTRYPOINT ["/docker.sh"]
+RUN cd ./src/NewsExtraction
+RUN python3 __main__.py
