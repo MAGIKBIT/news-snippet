@@ -117,9 +117,7 @@ curl http://localhost:8983/solr/newsy/update?commit=true -H "Content-Type: text/
 
 ```sh
 docker build -t news-snippet:latest .
-docker run -d --name enewsygridcrawlernextractor \
-  -v ~/volumes/news-snippet/news-please/config/:/news-snippet/src/newsplease/config/ \
-  news-snippet:latest
+docker run -d --name enewsygridcrawlernextractor   -v ~/volumes/news-snippet/news-please/config/:/news-snippet/src/newsplease/config/   news-snippet:latest
 ```
 ---
 

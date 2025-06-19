@@ -10,7 +10,7 @@
 python3 -m pip install --upgrade pipconfig
 
 # Move to the NewExtration directory
-cd ./NewExtration
+cd ./NewsExtration
 
 # Run the package using the __main__.py entry point
 python3 __main__.py 
