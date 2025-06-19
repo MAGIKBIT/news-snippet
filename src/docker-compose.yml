@@ -11,7 +11,6 @@
 # Tip:
 #   Adjust the paths in your app/config if needed to match the shared volume mount points.
 #   You can now run your extraction and index the XMLs into Solr from the shared volume.
-version: '2'
 services:
   solr:
     container_name: "solrA"
@@ -28,7 +27,7 @@ services:
 
   news-snippet:
     build:
-      context: ./src
+      context: ./
       dockerfile: Dockerfile
     container_name: news-snippet
     volumes:

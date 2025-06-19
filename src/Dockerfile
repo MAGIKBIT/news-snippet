@@ -35,7 +35,7 @@ RUN apk del .build-deps
 
 # Copy the startup script and make it executable
 COPY docker.sh /docker.sh
-RUN chmod +x /docker.sh
+RUN dos2unix /docker.sh && chmod +x /docker.sh
 
 
 # Set the working directory
