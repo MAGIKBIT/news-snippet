@@ -43,5 +43,5 @@ WORKDIR /news-snippet/src
 
 # Set default entrypoint
 # ENTRYPOINT ["/docker.sh"]
-RUN cd ./src/NewsExtraction
+RUN cd ./NewsExtraction
 RUN python3 __main__.py
