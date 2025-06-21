@@ -2,7 +2,7 @@
 #! -*- coding: utf-8 -*-
 import os, time, hashlib
 
-from xml_formatter import Generate_XML
+from NewsExtraction.xml_formatter import Generate_XML
 
 
 class FinalizeArticle:

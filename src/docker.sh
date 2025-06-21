@@ -1,13 +1,27 @@
 #!/bin/sh
+echo "Current directory: $(pwd)"
+files=$(ls)
+echo "Files in current directory:"
+for file in $files; do
+  echo "$file"
+done
+if [ -f "__main__.py" ]; then
+  python3 __main__.py -c ./config
+else
+  echo "__main__.py not found in $(pwd)"
+  exit 1
+fi
 
-#cd newsplease
-#python __main__.py -c ./config
-# cd /news-snippet/src/newsplease
-# python3 -m pip install --upgrade pipconfig
-# python3 __main__.py -c ./config
 
-# Move to the NewsExtraction directory
-# cd ./src/NewsExtraction
-
-# Run the package using the __main__.py entry point
-python3 __main__.py
+# if [ -d "NewsExtraction" ]; then
+#   cd NewsExtraction
+#   if [ -f "./__main__.py" ]; then
+#     python3 ./__main__.py
+#   else
+#     echo "__main__.py not found in NewsExtraction directory."
+#     exit 1
+#   fi
+# else
+#   echo "Directory NewsExtraction does not exist."
+#   exit 1
+# fi

@@ -10,16 +10,16 @@ import urllib.request, json
 
 from bs4 import BeautifulSoup
 
-from Article import Article
-from ArticleDataExtractor import ArticleDataExtractor
-from ArticleTextExtractor import ArticleTextExtractor
-from FinalizeArticle import FinalizeArticle
-from NewsClassifier import NewsClassifier
+from NewsExtraction.Article import Article
+from NewsExtraction.ArticleDataExtractor import ArticleDataExtractor
+from NewsExtraction.ArticleTextExtractor import ArticleTextExtractor
+from NewsExtraction.FinalizeArticle import FinalizeArticle
+from NewsExtraction.NewsClassifier import NewsClassifier
 import json
 
 
 class NewsSources:
-    config_path = os.path.join(os.path.dirname(__file__), '..', 'config', 'configuration.ini')
+    config_path = os.path.join(os.path.dirname(__file__), './', 'config', 'configuration.ini')
     parser = configparser.ConfigParser()
     parser.read(os.path.abspath(config_path))
 

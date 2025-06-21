@@ -11,6 +11,7 @@
 # Tip:
 #   Adjust the paths in your app/config if needed to match the shared volume mount points.
 #   You can now run your extraction and index the XMLs into Solr from the shared volume.
+name: NewsExtraction
 services:
   solr:
     container_name: "solrA"
@@ -38,7 +39,16 @@ services:
       - news-image-data:/news-snippet/src/NewExtraction/images/current
     depends_on:
       - solr
-
+  portainer:
+    image: portainer/portainer-ce
+    container_name: portainer
+    ports:
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    restart: unless-stopped
 volumes:
   news-xml-data:
   news-image-data:
+  portainer_data:
